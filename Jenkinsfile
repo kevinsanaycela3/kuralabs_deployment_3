@@ -17,7 +17,7 @@ pipeline {
       steps {
         sh '''#!/bin/bash
         source test3/bin/activate
-        py.test --verbose --junit-xml test-reports/results.xml
+        python3 -m py.test --verbose --junit-xml test-reports/results.xml
         '''
    }
       post{
