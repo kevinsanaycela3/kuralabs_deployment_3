@@ -13,7 +13,7 @@ pipeline {
         '''
       } 
     }
-    stage('Test') {
+    stage('Testy') {
       steps {
         sh '''#!/bin/bash
         python3 -m venv test3
