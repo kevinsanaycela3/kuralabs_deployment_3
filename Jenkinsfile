@@ -27,7 +27,7 @@ pipeline {
         }
       } 
     }
-  }
+  
    stage('Clean') {
       agent{label 'awsDeploy'}
       steps {
@@ -39,6 +39,7 @@ pipeline {
         ''' 
       }
     }
+     
     stage('Deploy') {
       agent{label 'awsDeploy'}
       steps {
@@ -51,6 +52,8 @@ pipeline {
       } 
       }
      }
+     
+     
    }
  }
 
