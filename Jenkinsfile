@@ -53,8 +53,33 @@ pipeline {
         '''
       }
      }
+      
+      post{
+         success {
+            slackSend(message: 
+                      """
+                      DEPLOYMENT SUCCESSFUL${custom_msg()}
+                      """)
+        }
+         failure {
+            slackSend(message: """
+            DEPLOYMENT FAILED ${custom_msg()}
+            """)
+        }
+       }
+
     }      
   }
+}
+
+def custom_msg()
+{
+  def JENKINS_LOG= 
+    """
+    Job: [${env.JOB_NAME}]
+    Path to log of each step: ${env.BUILD_URL}consoleText
+    """
+  return JENKINS_LOG
 }
 
       
