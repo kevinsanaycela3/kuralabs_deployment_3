@@ -42,7 +42,7 @@ pipeline {
       }
     }
      
-    stage('Deploy!') {
+    stage('Deploy') {
       agent{label 'awsDeploy'}
       steps {
       keepRunning {
@@ -76,7 +76,7 @@ def custom_msg()
   def JENKINS_LOG= 
     """
     Job: [${env.JOB_NAME}]
-    Path to log of each step: "http://3.89.115.40:8080/job/deployment3/indexing/console"
+    Path to log of each step: http://3.89.115.40:8080/job/deployment3/indexing/console
     """
   return JENKINS_LOG
 }
