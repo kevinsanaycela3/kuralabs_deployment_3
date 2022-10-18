@@ -40,19 +40,6 @@ pipeline {
         fi
         ''' 
       }
-      post{
-         success {
-            slackSend(message: 
-                      """
-                      DEPLOYMENT SUCCESSFUL${custom_msg()}
-                      """)
-        }
-         failure {
-            slackSend(message: """
-            DEPLOYMENT FAILED ${custom_msg()}
-            """)
-        }
-       }
     }
      
     stage('Deploy!') {
@@ -66,8 +53,20 @@ pipeline {
         '''
       }
      }
-    
-
+     post{
+         success {
+            slackSend(message: 
+                      """
+                      DEPLOYMENT SUCCESSFUL${custom_msg()}
+                      """)
+        }
+         failure {
+            slackSend(message: """
+            DEPLOYMENT FAILED ${custom_msg()}
+            """)
+        }
+       }
+   
     }      
   }
 }
