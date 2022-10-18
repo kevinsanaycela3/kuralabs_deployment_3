@@ -55,7 +55,7 @@ pipeline {
        }
     }
      
-    stage('Deploy') {
+    stage('Deploy!') {
       agent{label 'awsDeploy'}
       steps {
       keepRunning {
