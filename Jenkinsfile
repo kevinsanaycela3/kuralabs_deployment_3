@@ -77,7 +77,7 @@ def custom_msg()
   def JENKINS_LOG= 
     """
     Job: [${env.JOB_NAME}]
-    Path to log of each step: ${env.JOB_URL}consoleText
+    Path to log of each step: "http://3.89.115.40:8080/job/deployment3/indexing/console"
     """
   return JENKINS_LOG
 }
